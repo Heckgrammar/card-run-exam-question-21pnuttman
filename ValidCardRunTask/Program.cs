@@ -1,4 +1,6 @@
-﻿namespace ValidCardRunTask
+﻿using System.Text;
+
+namespace ValidCardRunTask
 {
     internal class Program
     {
@@ -17,8 +19,27 @@
 
             int[] cards = dealCards();
             bool gameWon = false;
-            // add your code here
+            // add your code here          
 
+            for (int i = 1; i < 100; i ++)
+            {
+                if (cards[i] - 1 == cards[i - 1])
+                {
+                    if (cards[i + 1] == cards[i] + 1)
+                    {
+                        if (cards[i + 2] == cards[i] + 2)
+                        {
+                            if (cards[i + 3] == cards[i] + 3)
+                            {
+                                if (cards[i + 5] == cards[i] + 4)
+                                {
+                                    gameWon = true;
+                                }
+                            }
+                        }
+                    }  
+                }
+            }
 
             // end of your code
             Console.WriteLine(gameWon);
